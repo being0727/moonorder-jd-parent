@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>moonorder-jd-eureka-server</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>moonorder-jd-eureka-server</name>
 	<description>EurekaServer project for Spring Boot</description>
 
@@ -33,6 +33,7 @@
 	</dependencies>
 
 	<dependencyManagement>
+
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -45,6 +46,7 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>moonorder-jd-eureka-server</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
