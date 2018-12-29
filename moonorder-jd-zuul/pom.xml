@@ -58,6 +58,7 @@
 		</dependencies>
 	</dependencyManagement>
 
+
 	<build>
 		<finalName>moonorder-jd-zuul</finalName>
 		<plugins>
