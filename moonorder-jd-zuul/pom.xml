@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>moonorder-jd-zuul</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>moonorder-jd-zuul</name>
 	<description>zuul project for Spring Boot</description>
 
@@ -59,6 +59,7 @@
 	</dependencyManagement>
 
 	<build>
+		<finalName>moonorder-jd-zuul</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
