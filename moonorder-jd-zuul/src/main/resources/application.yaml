@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: yd-jdgateway-service-zuul
+eureka:
+  client:
+    serviceUrl: #注册中心的注册地址
+      defaultZone: http://127.0.0.1:8090/eureka/
+
+server:
+  port: 8088
+zuul:
+
+  routes:
+    ignoredServices: '*'
+    test.path: /**
+    test.servicd-id: yd-jd-client
+
+
