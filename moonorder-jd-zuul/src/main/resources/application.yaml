@@ -1,18 +1,32 @@
 spring:
   application:
     name: yd-jdgateway-service-zuul
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
 eureka:
   client:
     serviceUrl: #注册中心的注册地址
       defaultZone: http://127.0.0.1:8100/eureka/
-
 server:
   port: 8088
 zuul:
-
   routes:
-    ignoredServices: '*'
-    test.path: /**
-    test.servicd-id: yd-jd-server
-
-
+    yd-jd-server:
+      path: /**
+      servicd-id: yd-jd-server
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeout-in-milliseconds: 60000
