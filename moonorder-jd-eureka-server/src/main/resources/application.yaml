@@ -5,10 +5,17 @@ eureka:
   instance:
     hostname: 127.0.0.1
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: false  # 当前的微服务不注册到eureka之中
+    fetch-registry: false  #不通过eureka获取注册信息
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+  server:
+#  在 Eureka 里面有一个问题，这个问题就是它默认支持有保护模式的概念，所谓的保护模式指的是即便现在某一个微服务不可用了，
+#eureka 不会清理，依然会进行该微服务信息的保存。 改变这种保护模式的启用 设置为false表示关闭保护模式
+    enable-self-preservation: false
+#    修改Eureka项目设置服务的清理间隔
+    eviction-interval-timer-in-ms: 6000
 spring:
   application:
     name: jd-eureka-server
